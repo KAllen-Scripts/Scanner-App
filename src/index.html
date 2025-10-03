@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=400, initial-scale=1.0">
+  <title>Barcode Scanner App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Scan a Barcode</h2>
+    <div id="scan-status" class="status">Ready to scan...</div>
+  <button id="manage-credentials" class="cred-btn">Manage API Credentials</button>
+  <button id="manage-stock-details" class="cred-btn">Enter Stock Details</button>
+  <div id="cred-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <h3>API Credentials</h3>
+      <form id="cred-form">
+        <label>API Key:<br><input type="text" id="api-key" autocomplete="off"></label><br>
+        <label>API Secret:<br><input type="password" id="api-secret" autocomplete="off"></label><br>
+        <label>Account Key:<br><input type="text" id="account-key" autocomplete="off"></label><br>
+        <div class="modal-actions">
+          <button type="submit">Save</button>
+          <button type="button" id="close-modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="stock-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <h3>Stock Details</h3>
+      <form id="stock-form">
+        <label>Stock Out Location Name:<br><input type="text" id="stock-out-location" autocomplete="off"></label><br>
+        <label>Stock Out Bin Name:<br><input type="text" id="stock-out-bin" autocomplete="off"></label><br>
+        <label>Stock In Location Name:<br><input type="text" id="stock-in-location" autocomplete="off"></label><br>
+        <label>Stock In Bin Name:<br><input type="text" id="stock-in-bin" autocomplete="off"></label><br>
+        <div class="modal-actions">
+          <button type="submit">Save</button>
+          <button type="button" id="close-stock-modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+    <div id="last-scan"></div>
+  </div>
+  <script src="stokly-api.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>
