@@ -11,6 +11,25 @@
   <div class="container">
     <h2>Scan a Barcode</h2>
     <div id="scan-status" class="status">Ready to scan...</div>
+  
+  <div class="dropdown-container">
+    <label for="item-dropdown">Select Item:</label>
+    <select id="item-dropdown" class="item-dropdown">
+      <option value=""></option>
+    </select>
+  </div>
+  
+  <div id="scanned-items-container" class="scanned-items-container">
+    <h3>Scanned Items</h3>
+    <div id="scanned-items-list" class="scanned-items-list">
+      <p class="empty-message">No items scanned yet</p>
+    </div>
+    <div class="action-buttons">
+      <button id="submit-adjustments" class="action-btn submit-btn" disabled>Submit Adjustments</button>
+      <button id="clear-list" class="action-btn clear-btn" disabled>Clear List</button>
+    </div>
+  </div>
+  
   <button id="manage-credentials" class="cred-btn">Manage API Credentials</button>
   <button id="manage-stock-details" class="cred-btn">Enter Stock Details</button>
   <div id="cred-modal" class="modal" style="display:none;">
@@ -38,6 +57,20 @@
         <div class="modal-actions">
           <button type="submit">Save</button>
           <button type="button" id="close-stock-modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="edit-quantity-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <h3>Edit Quantity</h3>
+      <p id="edit-item-name" style="font-weight: bold; margin-bottom: 16px;"></p>
+      <form id="edit-quantity-form">
+        <label>Quantity:<br><input type="number" id="edit-quantity-input" min="1" autocomplete="off"></label><br>
+        <div class="modal-actions">
+          <button type="submit">Save</button>
+          <button type="button" id="close-edit-modal">Cancel</button>
+          <button type="button" id="delete-item" style="background: #f44336; color: #fff; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-left: 8px;">Delete</button>
         </div>
       </form>
     </div>
